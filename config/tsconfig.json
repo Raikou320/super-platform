@@ -1,10 +1,13 @@
 {
-  "include": ["../src/**/*.ts"],
-  "exclude": ["../dist/"],
   "compilerOptions": {
-    "outDir": "../dist/",
-    "rootDir": "../src/",
     "module": "ES6",
+    "moduleResolution": "node",
+    "outDir": "../dist",
+    "rootDir": "../src",
+    "esModuleInterop": true,
+    "allowJs": true,
     "target": "ES6"
-  }
+  },
+  "include": ["../src"],
+  "exclude": ["../dist"]
 }
