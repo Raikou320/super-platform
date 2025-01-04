@@ -11,7 +11,16 @@ class Player {
   public minY: number;
   public maxX: number;
   public maxY: number;
-  constructor(x: number, y: number, minX: number, minY: number, maxX: number, maxY: number) {
+  public gravity: number;
+  private isGrounded: boolean = false;
+  constructor(
+    x: number,
+    y: number,
+    minX: number,
+    minY: number,
+    maxX: number,
+    maxY: number
+  ) {
     this.x = x;
     this.y = y;
     this.sx = 5;
@@ -25,8 +34,16 @@ class Player {
     this.color = 'red';
     this.src = new Image();
     this.src.src = '../assets/images/player.png';
+    this.gravity = 5;
   }
-  move(keys: { up?: boolean; left?: boolean; right?: boolean;}): void {
+  applyPhysics(): void {
+    if (this.y < this.maxY) this.y += this.gravity;
+    else {
+      this.isGrounded = true;
+      this.y = this.maxY;
+    }
+  }
+  move(keys: { up?: boolean; left?: boolean; right?: boolean }): void {
     if (keys.up && this.y + this.sy >= this.minY) this.y += this.sy;
     if (keys.left && this.x - this.sx >= this.minX) this.x -= this.sx;
     if (keys.right && this.x + this.sx <= this.maxX) this.x += this.sx;
@@ -39,4 +56,4 @@ class Player {
   }
 }
 
-export default Player;
+export default Player

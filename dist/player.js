@@ -1,5 +1,6 @@
 class Player {
     constructor(x, y, minX, minY, maxX, maxY) {
+        this.isGrounded = false;
         this.x = x;
         this.y = y;
         this.sx = 5;
@@ -13,6 +14,15 @@ class Player {
         this.color = 'red';
         this.src = new Image();
         this.src.src = '../assets/images/player.png';
+        this.gravity = 5;
+    }
+    applyPhysics() {
+        if (this.y < this.maxY)
+            this.y += this.gravity;
+        else {
+            this.isGrounded = true;
+            this.y = this.maxY;
+        }
     }
     move(keys) {
         if (keys.up && this.y + this.sy >= this.minY)
