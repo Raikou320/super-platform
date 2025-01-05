@@ -1,0 +1,26 @@
+# TypeScript and JavaScript files
+*.ts
+*.js
+
+
+# Without dist/math.js and src/math.ts
+!dist/math.js
+!src/math.ts
+
+#Prettier configuration
+*.prettierrc
+
+#Concept Document and README
+*.md
+
+#TS Config
+tsconfig.json
+
+#Images
+*.png
+
+#Index
+*.html
+
+#Styles
+*.css
