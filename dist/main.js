@@ -1,9 +1,9 @@
-import keys from "./keys.js";
-import loop from "./loop.js";
-import Player from "./player.js";
+import keys from "./keys";
+import loop from "./loop";
+import Player from "./player";
 export const worldHeight = 800;
 export const worldWidth = 2400;
-export const player = new Player(0, 200, 0, 0, worldWidth - 32, worldHeight - 123);
+export const player = new Player(0, 0, 0, 0, worldWidth, worldHeight - 123);
 document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'q')
         keys["left"] = true;

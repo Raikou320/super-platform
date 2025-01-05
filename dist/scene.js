@@ -1,4 +1,4 @@
-export let scene = 'lv1';
+export let scene = 'menu';
 export function setScene(newScene) {
     scene = newScene;
 }
