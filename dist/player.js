@@ -32,9 +32,6 @@ class Player {
         if (keys.right && this.x + this.sx <= this.maxX)
             this.x += this.sx;
     }
-    describe() {
-        console.log(`Position: (${this.x}, ${this.y})`);
-    }
     draw(ctx) {
         ctx.drawImage(this.src, this.x, this.y, this.width, this.height);
     }

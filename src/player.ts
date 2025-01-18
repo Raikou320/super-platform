@@ -48,12 +48,8 @@ class Player {
     if (keys.left && this.x - this.sx >= this.minX) this.x -= this.sx;
     if (keys.right && this.x + this.sx <= this.maxX) this.x += this.sx;
   }
-  describe(): void {
-    console.log(`Position: (${this.x}, ${this.y})`);
-  }
   draw(ctx: CanvasRenderingContext2D): void {
     ctx.drawImage(this.src, this.x, this.y, this.width, this.height);
   }
 }
-
-export default Player
+export default Player;

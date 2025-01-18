@@ -1,7 +1,7 @@
-import { player } from './main';
-import { canvas, ctx } from './canvas';
-import keys from './keys';
-import { scene, previousScene, setPreviousScene } from './scene';
+import { player, camera } from './main.js';
+import { canvas, ctx } from './canvas.js';
+import keys from './keys.js';
+import { scene, previousScene, setPreviousScene } from './scene.js';
 function loop() {
     if (scene !== previousScene) {
         if (scene === 'menu') {
@@ -18,6 +18,7 @@ function loop() {
     }
     else if (scene === 'lv1') {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        camera.startFollow();
         player.draw(ctx);
         player.move(keys);
     }
